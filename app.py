@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
 
@@ -10,4 +11,5 @@ def pagina_inicial():
     return "Laboratório DevOps - FIAP 8ASO"
 
 if __name__ == '__main__':
-    app.run()
+    port = os.getenv('PORT')
+    app.run('0.0.0.0', port=port)
